@@ -12,10 +12,22 @@ const Navbar = () => {
       </div>
       {/* MOBILE MENU */}
       <div className="md:hidden">
-        <div className="cursor-pointer text-4xl">{open ? "X" : "☰"}</div>
+        {/* MOBILE BUTTON */}
+        <div
+          className="cursor-pointer text-4xl"
+          onClick={() => setOpen((prev) => !prev)}
+        >
+          {open ? "X" : "☰"}
+        </div>
       </div>
-      {/* MOBILE BUTTON */}
       {/* MOBILE LINK LIST */}
+      <div
+        className={`w-full h-screen flex flex-col items-center justify-center absolute top-16  transition-all ease-in-out bg-red-500 ${
+          open ? "-right-0" : "-right-[100%]"
+        }`}
+      >
+        Menu
+      </div>
       {/* DESKTOP MENU */}
       <div className="hidden md:flex">D</div>
     </div>
