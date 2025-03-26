@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -31,10 +30,10 @@ const Navbar = () => {
       </div>
       {/* DESKTOP MENU */}
       <div className="hidden md:flex items-center gap-8 xl:gap-12 font-medium">
-        <Link to="/">Home</Link>
-        <Link to="/posts?sort=trending">Trending</Link>
-        <Link to="/posts?sort=popular">Most Popular</Link>
-        <Link to="/">About</Link>
+        <a to="/">Home</a>
+        <a to="/posts?sort=trending">Trending</a>
+        <a to="/posts?sort=popular">Most Popular</a>
+        <a to="/">About</a>
         <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
           Login 👋
         </button>
