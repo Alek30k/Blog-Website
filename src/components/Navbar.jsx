@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { IKImage } from "imagekitio-react";
+import Image from "./Image";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -8,12 +8,7 @@ const Navbar = () => {
     <div className="w-full h-16 md:h-20 flex items-center justify-between">
       {/* LOGO */}
       <div className="flex items-center gap-4 text-2xl font-bold">
-        <IKImage
-          urlEndpoint={import.meta.env.VITE_IK_URL_ENDPOINT}
-          path="/logo.png"
-          alt="logo"
-          className="w-8 h-8"
-        />
+        <Image src="logo.png" alt="logo" w={32} h={32} />
         <span>Alelog</span>
       </div>
       {/* MOBILE MENU */}
@@ -32,9 +27,24 @@ const Navbar = () => {
           open ? "-right-0" : "-right-[100%]"
         }`}
       >
-        Menu
+        <a to="/" onClick={() => setOpen(false)}>
+          Home
+        </a>
+        <a to="/posts?sort=trending" onClick={() => setOpen(false)}>
+          Trending
+        </a>
+        <a to="/posts?sort=popular" onClick={() => setOpen(false)}>
+          Most Popular
+        </a>
+        <a to="/" onClick={() => setOpen(false)}>
+          About
+        </a>
+        <a to="/login" onClick={() => setOpen(false)}>
+          <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
+            Login 👋
+          </button>
+        </a>{" "}
       </div>
-      {/* DESKTOP MENU */}
       <div className="hidden md:flex items-center gap-8 xl:gap-12 font-medium">
         <a to="/">Home</a>
         <a to="/posts?sort=trending">Trending</a>
@@ -54,6 +64,7 @@ const Navbar = () => {
           <UserButton />
         </SignedIn> */}
       </div>
+      {/* DESKTOP MENU */}
     </div>
   );
 };
