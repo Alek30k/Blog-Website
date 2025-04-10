@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "./Image";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -7,10 +8,10 @@ const Navbar = () => {
   return (
     <div className="w-full h-16 md:h-20 flex items-center justify-between">
       {/* LOGO */}
-      <div className="flex items-center gap-4 text-2xl font-bold">
+      <Link to="/" className="flex items-center gap-4 text-2xl font-bold">
         <Image src="logo.png" alt="logo" w={32} h={32} />
         <span>Alelog</span>
-      </div>
+      </Link>
       {/* MOBILE MENU */}
       <div className="md:hidden">
         {/* MOBILE BUTTON */}
@@ -27,29 +28,29 @@ const Navbar = () => {
           open ? "-right-0" : "-right-[100%]"
         }`}
       >
-        <a to="/" onClick={() => setOpen(false)}>
+        <Link to="/" onClick={() => setOpen(false)}>
           Home
-        </a>
-        <a to="/posts?sort=trending" onClick={() => setOpen(false)}>
+        </Link>
+        <Link to="/posts?sort=trending" onClick={() => setOpen(false)}>
           Trending
-        </a>
-        <a to="/posts?sort=popular" onClick={() => setOpen(false)}>
+        </Link>
+        <Link to="/posts?sort=popular" onClick={() => setOpen(false)}>
           Most Popular
-        </a>
-        <a to="/" onClick={() => setOpen(false)}>
+        </Link>
+        <Link to="/" onClick={() => setOpen(false)}>
           About
-        </a>
-        <a to="/login" onClick={() => setOpen(false)}>
+        </Link>
+        <Link to="/login" onClick={() => setOpen(false)}>
           <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
             Login 👋
           </button>
-        </a>{" "}
+        </Link>{" "}
       </div>
       <div className="hidden md:flex items-center gap-8 xl:gap-12 font-medium">
-        <a to="/">Home</a>
-        <a to="/posts?sort=trending">Trending</a>
-        <a to="/posts?sort=popular">Most Popular</a>
-        <a to="/">About</a>
+        <Link to="/">Home</Link>
+        <Link to="/posts?sort=trending">Trending</Link>
+        <Link to="/posts?sort=popular">Most Popular</Link>
+        <Link to="/">About</Link>
         <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
           Login 👋
         </button>
