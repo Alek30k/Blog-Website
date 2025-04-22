@@ -19,6 +19,12 @@ const FeacturedPost = () => {
           <span className="text-gray-500">2 days ago</span>
         </div>
         {/* title */}
+        <Link to="" className="text-xl lg:text-3xl font-semibold lg:font-bold">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quo
+          dolor iusto, neque illum delectus. Vero id reprehenderit, dolorum
+          quaerat iusto, accusantium asperiores nemo inventore ipsa, fugit
+          natus! Quasi, alias.
+        </Link>
       </div>
       {/* Other */}
       <div className="w-full lg:w-1/2 flex flex-col gap-4"></div>
